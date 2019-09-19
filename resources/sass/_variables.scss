@@ -1,0 +1,52 @@
+// Body
+$body-bg: #efefef;
+
+// Typography
+$font-family-sans-serif: 'Roboto', sans-serif;
+$font-size-base: 0.9rem;
+$line-height-base: 1.6;
+
+
+$font-size-nav: 16px;
+$font-color-nav: #8E8E89;
+
+// Colors
+$blue: #3490dc;
+$indigo: #6574cd;
+$purple: #9561e2;
+$pink: #f66d9b;
+$red: #e3342f;
+$orange: #f6993f;
+$yellow: #ffed4a;
+$green: #38c172;
+$teal: #4dc0b5;
+$cyan: #6cb2eb;
+$pinterest-red: #BD081C;
+
+//Images
+$welcome-img: url(../images/szabo-viktor-7hqEx1al0Fk-unsplash.jpg);
+
+.title{
+    font-size: 64px;
+    color: $pinterest-red;
+}
+
+.sub-title{
+    font-size: 24px; 
+}
+
+.welcome-bg{
+    background: $welcome-img;
+    background-size: cover;
+    background-position: center;
+}
+
+.pinterest-text{
+    color: $pinterest-red !important;
+}
+
+.nav-text{
+    font-size: $font-size-nav;
+    color: $font-color-nav;
+    font-weight: bolder;
+}
