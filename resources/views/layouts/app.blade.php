@@ -42,7 +42,7 @@
                     </ul>
 
                     <!-- Right Side Of Navbar -->
-                    <ul class="navbar-nav ml-auto">
+                    <ul id="nav-right" class="navbar-nav ml-auto" style="margin-right: 15%">
                         <!-- Authentication Links -->
                         @guest
                             <li class="nav-item">

@@ -1,30 +1,23 @@
 <template>
         <div class="d-flex justify-content-center">
             <div class="main-div">
-                <form
-                    action="pin"
-                    method="post"
-                    enctype="multipart/form-data"
-                >
-                
                 <input type="hidden" name="_token" :value="csrf">
                 
                  <div class="row justify-content-end" style="margin: 0">
-                    <button class="btn btn-danger" type="submit">Save</button>
+                    <button class="btn btn-danger" type="submit">Exit</button>
                  </div>
                 <div class="row" style="margin: 0">
-                    <div class="content col-md-5 d-flex justify-content-center">
+                    <div class="content col-md-7 d-flex justify-content-center">
                         <div class="img">
-                            <input id="image" type="file" name="image" class="img-input" accept="image/*">
+                            <img class="img-width" v-bind:src="'/storage/'+pin[0].image">
                         </div>
                     </div>
-                    <div class="content col-md-7 d-flex flex-column"  style="padding: 20px">
-                        <input id="title" type="text" name="title" placeholder="Add your title" class="title-input">
-                        <p class="name">{{user}}</p>
-                        <input id="desc" type="text" name="description" placeholder="Tell everyone what your Pin is about" class="dsc-input">
+                    <div class="content col-md-5 d-flex flex-column align-items-center"  style="padding: 20px">
+                            <h1 class="display4">{{pin[0].title}}</h1>
+    
+                            <h1 class="dsc-input">{{pin[0].description}}</h1>
                     </div>
                 </div>
-                </form>
             </div>
         </div>
 </template>
@@ -32,29 +25,34 @@
 <script>
     export default {
         mounted() {
-            console.log('Component mounted. BUILDER')
+            console.log(this.pin)
         },
         data() {
             return {
                 csrf: document.querySelector('meta[name="csrf-token"]').getAttribute('content')
             }
         },
-        props: ['user'],
+        props: ['pin', 'comments'],
     }
 </script>
 
 <style scoped>
+
+.img-width{
+    width: 100%
+}
+
 .main-div{
     background: white;
     border-radius: 16px;
     width: 70%;
     margin-top: 30px;
-    height: 600px;
+    height: fit-content;
     padding: 20px;
 }
 
 .content{
-    height: 450px; 
+    height: fit-content; 
     width: 100%; 
     padding: 20px;
 }
@@ -89,7 +87,7 @@
 }
 
 .img{
-    width: 80%;
+    max-width: 500px;
     height: 100%;
 }
 

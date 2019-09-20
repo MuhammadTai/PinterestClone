@@ -22,3 +22,5 @@ Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/pin-create', 'HomeController@create')->name('pin.create');
 
 Route::post('pin', 'HomeController@store');
+
+Route::get('/home/{id}', 'HomeController@show')->name('pin.show');

@@ -1,8 +1,8 @@
 <template>
         <div class="grid">
             <div class="grid-item" v-for="pin in pins" v-bind:key="pin.id">
-                <a v-on:click="show"><div class="pin-wrapper">
-                    <img class="img-width" v-bind:src="'storage/'+pin.image">
+                <a v-on:click="viewPin(pin.id)"><div class="pin-wrapper">
+                    <img class="img-width" v-bind:src="'/storage/'+pin.image">
                     <div class="pin-body">
                         <img src="../../images/more.svg" style="vertical-align: unset" width="12" height="12">
                     </div>
@@ -17,13 +17,13 @@
     export default {
         props:['pins'],
         methods:{
-            show :function(){
+            viewPin :function(id){
                 console.log(this.pins)
-            } 
+                window.location.href='/home/'+id
+            }
             
         },
         mounted() {
-            console.log('Component mounted.')
             console.log(this.pins)
             //data-masonry='{ "columnWidth": 250, "itemSelector": ".grid-item", "isFitWidth": true }'
             

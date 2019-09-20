@@ -61,4 +61,21 @@ class HomeController extends Controller
         return redirect('/home');
         
     }
+
+    public function show($id)
+    {
+        $pin = DB::table('pins') 
+            ->join('users', 'pins.user_id', '=', 'users.id')
+            ->where('pins.id', $id)
+            ->select('users.id', 'users.name', 'pins.*')
+            ->get();
+
+        $comments = DB::table('comments')
+            ->join('users', 'comments.user_id', '=', 'users.id')
+            ->where('comments.pin_id', $id)
+            ->select('users.id', 'users.name', 'comments.*')
+            ->get();
+
+        return view('pin', ['pin' => $pin, 'comments' => $comments]);
+    }
 }

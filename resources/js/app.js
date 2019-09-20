@@ -21,6 +21,7 @@ window.Vue = require('vue');
 
 Vue.component('pin-list', require('./components/PinList.vue').default);
 Vue.component('pin-builder', require('./components/PinBuilder.vue').default);
+Vue.component('pin', require('./components/Pin.vue').default);
 
 /**
  * Next, we will create a fresh Vue application instance and attach it to
