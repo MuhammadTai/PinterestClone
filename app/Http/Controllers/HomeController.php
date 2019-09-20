@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
+use Illuminate\Support\Facades\DB;
 
 use App\Pin;
 use Illuminate\Http\Request;
@@ -25,7 +26,8 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('home');
+        $pins = DB::table('pins')->orderBy('created_at','desc')->get();
+        return view('home', ['pins' => $pins]);
     }
 
     /** Show the pin upload page*/
@@ -34,23 +36,24 @@ class HomeController extends Controller
         return view('upload');
     }
 
+    /**handle the pin post form */
+
     public function store(Request $request)
     {
         
         $validatedData = $request->validate([
             'title' => 'max:50',
             'description' => 'max:100',
-            'image' => 'required|image'
+            'image' => 'required|image|dimensions:min_height=100|'
         ]);
 
-        dd($request->image->store('uploads'));
+        $imagePath =($request->image->store('uploads', 'public'));
 
-        //$imagePath = request('image')->store('uploads', 'public');
-
+        
         $pin = new Pin([
             'title' => $request->get('title'),
             'description' => $request->get('description'),
-            'image' => $request->get('image'),
+            'image' => $imagePath,
         ]);
         
         Auth::user()->pins()->save($pin);

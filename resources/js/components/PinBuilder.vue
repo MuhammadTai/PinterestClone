@@ -39,7 +39,7 @@
                 csrf: document.querySelector('meta[name="csrf-token"]').getAttribute('content')
             }
         },
-        props: ['user', 'error'],
+        props: ['user'],
     }
 </script>
 

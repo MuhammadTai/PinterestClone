@@ -1878,7 +1878,7 @@ __webpack_require__.r(__webpack_exports__);
       csrf: document.querySelector('meta[name="csrf-token"]').getAttribute('content')
     };
   },
-  props: ['user', 'error']
+  props: ['user']
 });
 
 /***/ }),
@@ -1909,75 +1909,18 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
+  props: ['pins'],
+  methods: {
+    show: function show() {
+      console.log(this.pins);
+    }
+  },
   mounted: function mounted() {
-    console.log('Component mounted.'); //data-masonry='{ "columnWidth": 250, "itemSelector": ".grid-item", "isFitWidth": true }'
+    console.log('Component mounted.');
+    console.log(this.pins); //data-masonry='{ "columnWidth": 250, "itemSelector": ".grid-item", "isFitWidth": true }'
 
     var $grid;
     console.log("jquery"); // init Masonry
@@ -1992,7 +1935,7 @@ __webpack_require__.r(__webpack_exports__);
       var msnry = new masonry_layout__WEBPACK_IMPORTED_MODULE_0___default.a('.grid', {
         // options...
         itemSelector: '.grid-item',
-        columnWidth: 230,
+        columnWidth: 240,
         isFitWidth: true,
         gutter: 20
       });
@@ -6503,7 +6446,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, "\n.grid-item[data-v-37220bb8]{\n    /*display: grid;\n    grid-template-columns: repeat(6, 200px);\n    grid-template-rows: none;\n    grid-auto-rows: auto;*/\n    /*MIN HEIGHT 55px\n    column-gap: 20px;\n    justify-content: center;\n    */\n    width: 230px;\n    border-radius: 10px;\n    margin-bottom: 5px;\n}\n.grid[data-v-37220bb8]{\n    margin: 0 auto;\n    margin-top: 10px;\n}\n.pin-wrapper[data-v-37220bb8]{\n    border-radius: 10px;\n    display: flex;\n    flex-direction: column;\n}\n.pin-wrapper[data-v-37220bb8]:hover{\n    background: #D0D3D4;\n}\n.pin-wrapper:hover .img-width[data-v-37220bb8]{\n    -webkit-filter: brightness(0.7);\n            filter: brightness(0.7)\n}\n.img-width[data-v-37220bb8]{\n    width: 210px;\n    border-radius: 10px;\n    align-self: center;\n    margin-top: 10px;\n}\n.pin-body[data-v-37220bb8]{\n    padding-left: 200px;\n    padding-top: 5px;\n}\n\n\n", ""]);
+exports.push([module.i, "\n.grid-item[data-v-37220bb8]{\n    /*display: grid;\n    grid-template-columns: repeat(6, 200px);\n    grid-template-rows: none;\n    grid-auto-rows: auto;*/\n    /*MIN HEIGHT 55px\n    column-gap: 20px;\n    justify-content: center;\n    */\n    width: 240px;\n    border-radius: 10px;\n    margin-bottom: 5px;\n}\n.grid[data-v-37220bb8]{\n    margin: 0 auto;\n    margin-top: 10px;\n}\n.pin-wrapper[data-v-37220bb8]{\n    border-radius: 10px;\n    display: flex;\n    flex-direction: column;\n    cursor: zoom-in;\n}\n.pin-wrapper[data-v-37220bb8]:hover{\n    background: #D0D3D4;\n}\n.pin-wrapper:hover .img-width[data-v-37220bb8]{\n    -webkit-filter: brightness(0.7);\n            filter: brightness(0.7)\n}\n.img-width[data-v-37220bb8]{\n    width: 220px;\n    border-radius: 10px;\n    align-self: center;\n    margin-top: 10px;\n}\n.pin-body[data-v-37220bb8]{\n    padding-left: 200px;\n    padding-top: 5px;\n}\n\n\n", ""]);
 
 // exports
 
@@ -40866,196 +40809,40 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _vm._m(0)
+  return _c(
+    "div",
+    { staticClass: "grid" },
+    _vm._l(_vm.pins, function(pin) {
+      return _c("div", { key: pin.id, staticClass: "grid-item" }, [
+        _c("a", { on: { click: _vm.show } }, [
+          _c("div", { staticClass: "pin-wrapper" }, [
+            _c("img", {
+              staticClass: "img-width",
+              attrs: { src: "storage/" + pin.image }
+            }),
+            _vm._v(" "),
+            _vm._m(0, true)
+          ])
+        ])
+      ])
+    }),
+    0
+  )
 }
 var staticRenderFns = [
   function() {
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "grid" }, [
-      _c("div", { staticClass: "grid-item" }, [
-        _c("div", { staticClass: "pin-wrapper" }, [
-          _c("img", {
-            staticClass: "img-width",
-            attrs: {
-              src: __webpack_require__(/*! ../../images/szabo-viktor-7hqEx1al0Fk-unsplash.jpg */ "./resources/images/szabo-viktor-7hqEx1al0Fk-unsplash.jpg")
-            }
-          }),
-          _vm._v(" "),
-          _c("div", { staticClass: "pin-body" }, [
-            _c("img", {
-              staticStyle: { "vertical-align": "unset" },
-              attrs: {
-                src: __webpack_require__(/*! ../../images/more.svg */ "./resources/images/more.svg"),
-                width: "12",
-                height: "12"
-              }
-            })
-          ])
-        ])
-      ]),
-      _vm._v(" "),
-      _c("div", { staticClass: "grid-item" }, [
-        _c("div", { staticClass: "pin-wrapper" }, [
-          _c("img", {
-            staticClass: "img-width",
-            attrs: {
-              src: "//www.lorempixel.com/300/400/cats",
-              alt: "pretty kitty"
-            }
-          }),
-          _vm._v(" "),
-          _c("div", { staticClass: "pin-body" }, [
-            _c("img", {
-              staticStyle: { "vertical-align": "unset" },
-              attrs: {
-                src: __webpack_require__(/*! ../../images/more.svg */ "./resources/images/more.svg"),
-                width: "12",
-                height: "12"
-              }
-            })
-          ])
-        ])
-      ]),
-      _vm._v(" "),
-      _c("div", { staticClass: "grid-item" }, [
-        _c("div", { staticClass: "pin-wrapper" }, [
-          _c("img", {
-            staticClass: "img-width",
-            attrs: {
-              src: "//www.lorempixel.com/300/450/cats",
-              alt: "pretty kitty"
-            }
-          }),
-          _vm._v(" "),
-          _c("div", { staticClass: "pin-body" }, [
-            _c("img", {
-              staticStyle: { "vertical-align": "unset" },
-              attrs: {
-                src: __webpack_require__(/*! ../../images/more.svg */ "./resources/images/more.svg"),
-                width: "12",
-                height: "12"
-              }
-            })
-          ])
-        ])
-      ]),
-      _vm._v(" "),
-      _c("div", { staticClass: "grid-item" }, [
-        _c("div", { staticClass: "pin-wrapper" }, [
-          _c("img", {
-            staticClass: "img-width",
-            attrs: {
-              src: "//www.lorempixel.com/300/425/cats",
-              alt: "pretty kitty"
-            }
-          }),
-          _vm._v(" "),
-          _c("div", { staticClass: "pin-body" }, [
-            _c("img", {
-              staticStyle: { "vertical-align": "unset" },
-              attrs: {
-                src: __webpack_require__(/*! ../../images/more.svg */ "./resources/images/more.svg"),
-                width: "12",
-                height: "12"
-              }
-            })
-          ])
-        ])
-      ]),
-      _vm._v(" "),
-      _c("div", { staticClass: "grid-item" }, [
-        _c("div", { staticClass: "pin-wrapper" }, [
-          _c("img", {
-            staticClass: "img-width",
-            attrs: {
-              src: "//www.lorempixel.com/300/410/cats",
-              alt: "pretty kitty"
-            }
-          }),
-          _vm._v(" "),
-          _c("div", { staticClass: "pin-body" }, [
-            _c("img", {
-              staticStyle: { "vertical-align": "unset" },
-              attrs: {
-                src: __webpack_require__(/*! ../../images/more.svg */ "./resources/images/more.svg"),
-                width: "12",
-                height: "12"
-              }
-            })
-          ])
-        ])
-      ]),
-      _vm._v(" "),
-      _c("div", { staticClass: "grid-item" }, [
-        _c("div", { staticClass: "pin-wrapper" }, [
-          _c("img", {
-            staticClass: "img-width",
-            attrs: {
-              src: "//www.lorempixel.com/300/500/cats",
-              alt: "pretty kitty"
-            }
-          }),
-          _vm._v(" "),
-          _c("div", { staticClass: "pin-body" }, [
-            _c("img", {
-              staticStyle: { "vertical-align": "unset" },
-              attrs: {
-                src: __webpack_require__(/*! ../../images/more.svg */ "./resources/images/more.svg"),
-                width: "12",
-                height: "12"
-              }
-            })
-          ])
-        ])
-      ]),
-      _vm._v(" "),
-      _c("div", { staticClass: "grid-item" }, [
-        _c("div", { staticClass: "pin-wrapper" }, [
-          _c("img", {
-            staticClass: "img-width",
-            attrs: {
-              src: "//www.lorempixel.com/300/480/cats",
-              alt: "pretty kitty"
-            }
-          }),
-          _vm._v(" "),
-          _c("div", { staticClass: "pin-body" }, [
-            _c("img", {
-              staticStyle: { "vertical-align": "unset" },
-              attrs: {
-                src: __webpack_require__(/*! ../../images/more.svg */ "./resources/images/more.svg"),
-                width: "12",
-                height: "12"
-              }
-            })
-          ])
-        ])
-      ]),
-      _vm._v(" "),
-      _c("div", { staticClass: "grid-item" }, [
-        _c("div", { staticClass: "pin-wrapper" }, [
-          _c("img", {
-            staticClass: "img-width",
-            attrs: {
-              src: "//www.lorempixel.com/300/640/cats",
-              alt: "pretty kitty"
-            }
-          }),
-          _vm._v(" "),
-          _c("div", { staticClass: "pin-body" }, [
-            _c("img", {
-              staticStyle: { "vertical-align": "unset" },
-              attrs: {
-                src: __webpack_require__(/*! ../../images/more.svg */ "./resources/images/more.svg"),
-                width: "12",
-                height: "12"
-              }
-            })
-          ])
-        ])
-      ])
+    return _c("div", { staticClass: "pin-body" }, [
+      _c("img", {
+        staticStyle: { "vertical-align": "unset" },
+        attrs: {
+          src: __webpack_require__(/*! ../../images/more.svg */ "./resources/images/more.svg"),
+          width: "12",
+          height: "12"
+        }
+      })
     ])
   }
 ]
@@ -53209,17 +52996,6 @@ module.exports = function(module) {
 /***/ (function(module, exports) {
 
 module.exports = "/images/more.svg?a331bf49639f665ac996ea34d69da28c";
-
-/***/ }),
-
-/***/ "./resources/images/szabo-viktor-7hqEx1al0Fk-unsplash.jpg":
-/*!****************************************************************!*\
-  !*** ./resources/images/szabo-viktor-7hqEx1al0Fk-unsplash.jpg ***!
-  \****************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-module.exports = "/images/szabo-viktor-7hqEx1al0Fk-unsplash.jpg?ccfd291ebd0bd19924be09e94a3d5d96";
 
 /***/ }),
 

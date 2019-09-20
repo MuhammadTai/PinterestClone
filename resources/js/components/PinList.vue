@@ -1,77 +1,13 @@
 <template>
-        <div class="grid" >
-            <div class="grid-item">
-                <div class="pin-wrapper">
-                    <img class="img-width" src="../../images/szabo-viktor-7hqEx1al0Fk-unsplash.jpg">
+        <div class="grid">
+            <div class="grid-item" v-for="pin in pins" v-bind:key="pin.id">
+                <a v-on:click="show"><div class="pin-wrapper">
+                    <img class="img-width" v-bind:src="'storage/'+pin.image">
                     <div class="pin-body">
                         <img src="../../images/more.svg" style="vertical-align: unset" width="12" height="12">
                     </div>
-                </div>
+                </div></a>
             </div>
-
-            <div class="grid-item">
-                <div class="pin-wrapper">
-                    <img class="img-width" src="//www.lorempixel.com/300/400/cats" alt="pretty kitty">
-                    <div class="pin-body">
-                       <img src="../../images/more.svg" style="vertical-align: unset" width="12" height="12">
-                    </div>
-                </div>
-            </div>
-
-            <div class="grid-item">
-                <div class="pin-wrapper">
-                    <img class="img-width" src="//www.lorempixel.com/300/450/cats" alt="pretty kitty">
-                    <div class="pin-body">
-                        <img src="../../images/more.svg" style="vertical-align: unset" width="12" height="12">
-                    </div>
-                </div>
-            </div>
-
-            <div class="grid-item">
-                <div class="pin-wrapper">
-                    <img class="img-width" src="//www.lorempixel.com/300/425/cats" alt="pretty kitty">
-                    <div class="pin-body">
-                        <img src="../../images/more.svg" style="vertical-align: unset" width="12" height="12">
-                    </div>
-                </div>
-            </div>
-
-            <div class="grid-item">
-                <div class="pin-wrapper">
-                    <img class="img-width" src="//www.lorempixel.com/300/410/cats" alt="pretty kitty">
-                    <div class="pin-body">
-                        <img src="../../images/more.svg" style="vertical-align: unset" width="12" height="12">
-                    </div>
-                </div>
-            </div>
-
-            <div class="grid-item">
-                <div class="pin-wrapper">
-                    <img class="img-width" src="//www.lorempixel.com/300/500/cats" alt="pretty kitty">
-                    <div class="pin-body">
-                        <img src="../../images/more.svg" style="vertical-align: unset" width="12" height="12">
-                    </div>
-                </div>
-            </div>
-
-            <div class="grid-item">
-                <div class="pin-wrapper">
-                    <img class="img-width" src="//www.lorempixel.com/300/480/cats" alt="pretty kitty">
-                    <div class="pin-body">
-                        <img src="../../images/more.svg" style="vertical-align: unset" width="12" height="12">
-                    </div>
-                </div>
-            </div>
-
-            <div class="grid-item">
-                <div class="pin-wrapper">
-                    <img class="img-width" src="//www.lorempixel.com/300/640/cats" alt="pretty kitty">
-                    <div class="pin-body">
-                        <img src="../../images/more.svg" style="vertical-align: unset" width="12" height="12">
-                    </div>
-                </div>
-            </div>
-        
         </div>
 </template>
 
@@ -79,8 +15,16 @@
     import Masonry from 'masonry-layout'
     import imagesLoaded from 'imagesloaded'
     export default {
+        props:['pins'],
+        methods:{
+            show :function(){
+                console.log(this.pins)
+            } 
+            
+        },
         mounted() {
             console.log('Component mounted.')
+            console.log(this.pins)
             //data-masonry='{ "columnWidth": 250, "itemSelector": ".grid-item", "isFitWidth": true }'
             
             var $grid;
@@ -95,7 +39,7 @@
                 var msnry = new Masonry('.grid',{
                     // options...
                     itemSelector: '.grid-item',
-                    columnWidth: 230,
+                    columnWidth: 240,
                     isFitWidth: true,
                     gutter: 20,
                 })
@@ -140,7 +84,7 @@
     column-gap: 20px;
     justify-content: center;
     */
-    width: 230px;
+    width: 240px;
     border-radius: 10px;
     margin-bottom: 5px;
 }
@@ -154,6 +98,7 @@
     border-radius: 10px;
     display: flex;
     flex-direction: column;
+    cursor: zoom-in;
 }
 
 .pin-wrapper:hover{
@@ -165,7 +110,7 @@
 }
 
 .img-width{
-    width: 210px;
+    width: 220px;
     border-radius: 10px;
     align-self: center;
     margin-top: 10px;
