@@ -26,3 +26,5 @@ Route::post('pin', 'HomeController@store');
 Route::get('/home/{id}', 'HomeController@show')->name('pin.show');
 
 Route::post('/home/comment', 'HomeController@storeComment');
+
+Route::delete('/home/{id}', 'HomeController@destroy');

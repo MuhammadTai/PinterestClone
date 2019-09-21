@@ -2,7 +2,18 @@
         <div class="d-flex justify-content-center">
             <div class="main-div">
                 
-                 <div class="row justify-content-end" style="margin: 0">
+                 <div class="row justify-content-between" style="margin: 0">
+                    <form
+                        v-bind:action="'/home/'+pin[0].id"
+                        method="POST"
+                    >
+                        <input type="hidden" name="_method" value="DELETE">
+                        <input type="hidden" name="_token" :value="csrf">
+                        <input type="hidden" name="pin_id" :value="pin[0].id">
+                        
+                        <button class="btn btn-danger" type="submit">Delete</button>
+                     </form>
+                    
                     <button class="btn btn-danger" v-on:click="exit">Exit</button>
                  </div>
                 <div class="row" style="justify-content: center; margin: 0">

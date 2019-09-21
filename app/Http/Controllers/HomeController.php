@@ -99,7 +99,9 @@ class HomeController extends Controller
         
     }
 
-    public function destory(Request $request){
-        
+    public function destroy(Request $request){
+        $deletedCommentRows = Comment::where('pin_id', $request->get('pin_id'))->delete();
+        $deletedPinRows = Pin::where([['user_id', Auth::id()],['id', $request->get('pin_id')]])->delete();
+        return redirect('/home');
     }
 }

@@ -1887,6 +1887,17 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   mounted: function mounted() {
     console.log(this.pin);
@@ -40831,10 +40842,36 @@ var render = function() {
       _c(
         "div",
         {
-          staticClass: "row justify-content-end",
+          staticClass: "row justify-content-between",
           staticStyle: { margin: "0" }
         },
         [
+          _c(
+            "form",
+            { attrs: { action: "/home/" + _vm.pin[0].id, method: "POST" } },
+            [
+              _c("input", {
+                attrs: { type: "hidden", name: "_method", value: "DELETE" }
+              }),
+              _vm._v(" "),
+              _c("input", {
+                attrs: { type: "hidden", name: "_token" },
+                domProps: { value: _vm.csrf }
+              }),
+              _vm._v(" "),
+              _c("input", {
+                attrs: { type: "hidden", name: "pin_id" },
+                domProps: { value: _vm.pin[0].id }
+              }),
+              _vm._v(" "),
+              _c(
+                "button",
+                { staticClass: "btn btn-danger", attrs: { type: "submit" } },
+                [_vm._v("Delete")]
+              )
+            ]
+          ),
+          _vm._v(" "),
           _c(
             "button",
             { staticClass: "btn btn-danger", on: { click: _vm.exit } },
