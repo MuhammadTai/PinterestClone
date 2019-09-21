@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 use Illuminate\Support\Facades\DB;
 
 use App\Pin;
+use App\Comment;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -44,7 +45,7 @@ class HomeController extends Controller
         $validatedData = $request->validate([
             'title' => 'max:50',
             'description' => 'max:100',
-            'image' => 'required|image|dimensions:min_height=100|'
+            'image' => 'required|image|dimensions:min_height=100'
         ]);
 
         $imagePath =($request->image->store('uploads', 'public'));
@@ -77,5 +78,28 @@ class HomeController extends Controller
             ->get();
 
         return view('pin', ['pin' => $pin, 'comments' => $comments]);
+    }
+
+    public function storeComment(Request $request){
+        
+        $validatedData = $request->validate([
+            'comment_text' => 'required|max:200',
+        ]);
+        
+        $comment = new Comment([
+            'comment' => $request->get('comment_text'),
+        ]);
+        $comment->user()->associate(Auth::user());
+        $pin = Pin::find($request->get('pin_id'));
+        $comment->pin()->associate($pin);
+
+        $comment->save();
+
+        return redirect('/home'.'/'.$request->get('pin_id'));
+        
+    }
+
+    public function destory(Request $request){
+        
     }
 }

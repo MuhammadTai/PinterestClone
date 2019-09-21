@@ -47,7 +47,7 @@
 .main-div{
     background: white;
     border-radius: 16px;
-    width: 70%;
+    width: 100%;
     margin-top: 30px;
     height: 600px;
     padding: 20px;
@@ -80,7 +80,6 @@
     border-left-style: hidden;
     border-right-style: hidden;
     font-size: 18px;
-
 }
 
 .name{
@@ -96,7 +95,6 @@
 @media (max-width: 768px) { 
 .main-div{
     height: fit-content;
-    width: 70%;
 }
 .title-input{
     font-size: 38px;

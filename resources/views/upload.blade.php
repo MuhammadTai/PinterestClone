@@ -8,7 +8,7 @@
                 @endforeach
         @endif
     </ul>
-    <div class="container-fluid">
+    <div class="container">
             <pin-builder user="{{ (Auth::user()->name) }} "></pin-builder>
     </div>
 @endsection

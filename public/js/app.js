@@ -1862,16 +1862,47 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   mounted: function mounted() {
     console.log(this.pin);
+    console.log(this.comments);
   },
   data: function data() {
     return {
       csrf: document.querySelector('meta[name="csrf-token"]').getAttribute('content')
     };
   },
-  props: ['pin', 'comments']
+  props: ['pin', 'comments'],
+  methods: {
+    exit: function exit() {
+      window.location.href = '/home';
+    }
+  }
 });
 
 /***/ }),
@@ -6474,7 +6505,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, "\n.img-width[data-v-1851120c]{\r\n    width: 100%\n}\n.main-div[data-v-1851120c]{\r\n    background: white;\r\n    border-radius: 16px;\r\n    width: 70%;\r\n    margin-top: 30px;\r\n    height: -webkit-fit-content;\r\n    height: -moz-fit-content;\r\n    height: fit-content;\r\n    padding: 20px;\n}\n.content[data-v-1851120c]{\r\n    height: -webkit-fit-content;\r\n    height: -moz-fit-content;\r\n    height: fit-content; \r\n    width: 100%; \r\n    padding: 20px;\n}\n.img-input[data-v-1851120c]{\r\n    background: #efefef; \r\n    width: 100%; \r\n    height: 100%;\r\n    border-radius: 10px;\n}\n.title-input[data-v-1851120c]{\r\n    margin-top: 20px;\r\n    border-top-style: hidden;\r\n    border-left-style: hidden;\r\n    border-right-style: hidden;\r\n    font-size: 40px;\n}\n.dsc-input[data-v-1851120c]{\r\n    margin-top: 20px;\r\n    border-top-style: hidden;\r\n    border-left-style: hidden;\r\n    border-right-style: hidden;\r\n    font-size: 18px;\n}\n.name[data-v-1851120c]{\r\n    margin-top: 20px;\r\n    font-size: 14px;\n}\n.img[data-v-1851120c]{\r\n    max-width: 500px;\r\n    height: 100%;\n}\n@media (max-width: 768px) {\n.main-div[data-v-1851120c]{\r\n    height: -webkit-fit-content;\r\n    height: -moz-fit-content;\r\n    height: fit-content;\r\n    width: 70%;\n}\n.title-input[data-v-1851120c]{\r\n    font-size: 38px;\n}\n.dsc-input[data-v-1851120c]{\r\n    font-size: 16px;\n}\n.img[data-v-1851120c]{\r\n    width: 70%;\n}\n.content[data-v-1851120c]{\r\n    height: 400px;\n}\n}\n@media (max-width: 575.98px) {\n.title-input[data-v-1851120c]{\r\n    font-size: 24px;\n}\n.dsc-input[data-v-1851120c]{\r\n    font-size: 14px;\n}\n.main-div[data-v-1851120c]{\r\n    width: 80%;\n}\n.img[data-v-1851120c]{\r\n    width: 80%;\r\n    height: 100%;\n}\n}\r\n\r\n", ""]);
+exports.push([module.i, "\n.comment[data-v-1851120c]{\r\n    height: -webkit-fit-content;\r\n    height: -moz-fit-content;\r\n    height: fit-content;\r\n    width: 100%;\r\n    border-style: solid;\r\n    border-color: #efefef;\r\n    font-size: 14px;\r\n    border-radius: 10px;\r\n    padding: 12px;\r\n    margin-bottom: 20px;\n}\n.img-width[data-v-1851120c]{\r\n    width: 100%;\n}\n.main-div[data-v-1851120c]{\r\n    background: white;\r\n    border-radius: 16px;\r\n    width: 100%;\r\n    margin-top: 30px;\r\n    height: -webkit-fit-content;\r\n    height: -moz-fit-content;\r\n    height: fit-content;\r\n    padding: 20px;\n}\n.content[data-v-1851120c]{\r\n    height: -webkit-fit-content;\r\n    height: -moz-fit-content;\r\n    height: fit-content; \r\n    width: 80%; \r\n    padding: 20px;\n}\n.img-input[data-v-1851120c]{\r\n    background: #efefef; \r\n    width: 100%; \r\n    height: 100%;\r\n    border-radius: 10px;\n}\n.title-input[data-v-1851120c]{\r\n    margin-top: 20px;\r\n    border-top-style: hidden;\r\n    border-left-style: hidden;\r\n    border-right-style: hidden;\r\n    font-size: 40px;\n}\n.dsc-input[data-v-1851120c]{\r\n    margin-top: 20px;\r\n    border-top-style: hidden;\r\n    border-left-style: hidden;\r\n    border-right-style: hidden;\r\n    font-size: 18px;\n}\n.name[data-v-1851120c]{\r\n    margin-top: 20px;\r\n    font-size: 14px;\n}\n.img[data-v-1851120c]{\r\n    max-width: 500px;\r\n    height: 100%;\n}\n@media (max-width: 1199.98px) {\n}\n@media (max-width: 768px) {\n.title-input[data-v-1851120c]{\r\n    font-size: 38px;\n}\n.dsc-input[data-v-1851120c]{\r\n    font-size: 16px;\n}\n.img[data-v-1851120c]{\r\n    width: 80%;\n}\n}\n@media (max-width: 575.98px) {\n.title-input[data-v-1851120c]{\r\n    font-size: 24px;\n}\n.dsc-input[data-v-1851120c]{\r\n    font-size: 14px;\n}\n.main-div[data-v-1851120c]{\r\n    width: 80%;\n}\n.img[data-v-1851120c]{\r\n    width: 100%;\r\n    height: 100%;\n}\n}\r\n\r\n", ""]);
 
 // exports
 
@@ -6493,7 +6524,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, "\n.main-div[data-v-f1ea241e]{\r\n    background: white;\r\n    border-radius: 16px;\r\n    width: 70%;\r\n    margin-top: 30px;\r\n    height: 600px;\r\n    padding: 20px;\n}\n.content[data-v-f1ea241e]{\r\n    height: 450px; \r\n    width: 100%; \r\n    padding: 20px;\n}\n.img-input[data-v-f1ea241e]{\r\n    background: #efefef; \r\n    width: 100%; \r\n    height: 100%;\r\n    border-radius: 10px;\n}\n.title-input[data-v-f1ea241e]{\r\n    margin-top: 20px;\r\n    border-top-style: hidden;\r\n    border-left-style: hidden;\r\n    border-right-style: hidden;\r\n    font-size: 40px;\n}\n.dsc-input[data-v-f1ea241e]{\r\n    margin-top: 20px;\r\n    border-top-style: hidden;\r\n    border-left-style: hidden;\r\n    border-right-style: hidden;\r\n    font-size: 18px;\n}\n.name[data-v-f1ea241e]{\r\n    margin-top: 20px;\r\n    font-size: 14px;\n}\n.img[data-v-f1ea241e]{\r\n    width: 80%;\r\n    height: 100%;\n}\n@media (max-width: 768px) {\n.main-div[data-v-f1ea241e]{\r\n    height: -webkit-fit-content;\r\n    height: -moz-fit-content;\r\n    height: fit-content;\r\n    width: 70%;\n}\n.title-input[data-v-f1ea241e]{\r\n    font-size: 38px;\n}\n.dsc-input[data-v-f1ea241e]{\r\n    font-size: 16px;\n}\n.img[data-v-f1ea241e]{\r\n    width: 70%;\n}\n.content[data-v-f1ea241e]{\r\n    height: 400px;\n}\n}\n@media (max-width: 575.98px) {\n.title-input[data-v-f1ea241e]{\r\n    font-size: 24px;\n}\n.dsc-input[data-v-f1ea241e]{\r\n    font-size: 14px;\n}\n.main-div[data-v-f1ea241e]{\r\n    width: 80%;\n}\n.img[data-v-f1ea241e]{\r\n    width: 80%;\r\n    height: 100%;\n}\n}\r\n\r\n", ""]);
+exports.push([module.i, "\n.main-div[data-v-f1ea241e]{\r\n    background: white;\r\n    border-radius: 16px;\r\n    width: 100%;\r\n    margin-top: 30px;\r\n    height: 600px;\r\n    padding: 20px;\n}\n.content[data-v-f1ea241e]{\r\n    height: 450px; \r\n    width: 100%; \r\n    padding: 20px;\n}\n.img-input[data-v-f1ea241e]{\r\n    background: #efefef; \r\n    width: 100%; \r\n    height: 100%;\r\n    border-radius: 10px;\n}\n.title-input[data-v-f1ea241e]{\r\n    margin-top: 20px;\r\n    border-top-style: hidden;\r\n    border-left-style: hidden;\r\n    border-right-style: hidden;\r\n    font-size: 40px;\n}\n.dsc-input[data-v-f1ea241e]{\r\n    margin-top: 20px;\r\n    border-top-style: hidden;\r\n    border-left-style: hidden;\r\n    border-right-style: hidden;\r\n    font-size: 18px;\n}\n.name[data-v-f1ea241e]{\r\n    margin-top: 20px;\r\n    font-size: 14px;\n}\n.img[data-v-f1ea241e]{\r\n    width: 80%;\r\n    height: 100%;\n}\n@media (max-width: 768px) {\n.main-div[data-v-f1ea241e]{\r\n    height: -webkit-fit-content;\r\n    height: -moz-fit-content;\r\n    height: fit-content;\n}\n.title-input[data-v-f1ea241e]{\r\n    font-size: 38px;\n}\n.dsc-input[data-v-f1ea241e]{\r\n    font-size: 16px;\n}\n.img[data-v-f1ea241e]{\r\n    width: 70%;\n}\n.content[data-v-f1ea241e]{\r\n    height: 400px;\n}\n}\n@media (max-width: 575.98px) {\n.title-input[data-v-f1ea241e]{\r\n    font-size: 24px;\n}\n.dsc-input[data-v-f1ea241e]{\r\n    font-size: 14px;\n}\n.main-div[data-v-f1ea241e]{\r\n    width: 80%;\n}\n.img[data-v-f1ea241e]{\r\n    width: 80%;\r\n    height: 100%;\n}\n}\r\n\r\n", ""]);
 
 // exports
 
@@ -40797,66 +40828,162 @@ var render = function() {
   var _c = _vm._self._c || _h
   return _c("div", { staticClass: "d-flex justify-content-center" }, [
     _c("div", { staticClass: "main-div" }, [
-      _c("input", {
-        attrs: { type: "hidden", name: "_token" },
-        domProps: { value: _vm.csrf }
-      }),
+      _c(
+        "div",
+        {
+          staticClass: "row justify-content-end",
+          staticStyle: { margin: "0" }
+        },
+        [
+          _c(
+            "button",
+            { staticClass: "btn btn-danger", on: { click: _vm.exit } },
+            [_vm._v("Exit")]
+          )
+        ]
+      ),
       _vm._v(" "),
-      _vm._m(0),
-      _vm._v(" "),
-      _c("div", { staticClass: "row", staticStyle: { margin: "0" } }, [
-        _c(
-          "div",
-          { staticClass: "content col-md-7 d-flex justify-content-center" },
-          [
-            _c("div", { staticClass: "img" }, [
-              _c("img", {
-                staticClass: "img-width",
-                attrs: { src: "/storage/" + _vm.pin[0].image }
-              })
-            ])
-          ]
-        ),
-        _vm._v(" "),
-        _c(
-          "div",
-          {
-            staticClass:
-              "content col-md-5 d-flex flex-column align-items-center",
-            staticStyle: { padding: "20px" }
-          },
-          [
-            _c("h1", { staticClass: "display4" }, [
-              _vm._v(_vm._s(_vm.pin[0].title))
-            ]),
-            _vm._v(" "),
-            _c("h1", { staticClass: "dsc-input" }, [
-              _vm._v(_vm._s(_vm.pin[0].description))
-            ])
-          ]
-        )
-      ])
+      _c(
+        "div",
+        {
+          staticClass: "row",
+          staticStyle: { "justify-content": "center", margin: "0" }
+        },
+        [
+          _c(
+            "div",
+            { staticClass: "content col-md-7 d-flex justify-content-center" },
+            [
+              _c("div", { staticClass: "img" }, [
+                _c("img", {
+                  staticClass: "img-width",
+                  attrs: { src: "/storage/" + _vm.pin[0].image }
+                })
+              ])
+            ]
+          ),
+          _vm._v(" "),
+          _c(
+            "div",
+            {
+              staticClass:
+                "content col-md-5 d-flex flex-column align-items-start",
+              staticStyle: { padding: "20px" }
+            },
+            [
+              _c("h1", { staticClass: "title-input" }, [
+                _vm._v(_vm._s(_vm.pin[0].title))
+              ]),
+              _vm._v(" "),
+              _c("h2", { staticStyle: { "margin-top": "20px" } }, [
+                _c("span", { staticStyle: { color: "grey" } }, [
+                  _vm._v("Uploaded by")
+                ]),
+                _vm._v(" " + _vm._s(_vm.pin[0].name))
+              ]),
+              _vm._v(" "),
+              _c("h3", { staticStyle: { "margin-top": "60px" } }, [
+                _vm._v(_vm._s(_vm.comments.size) + " Comments")
+              ]),
+              _vm._v(" "),
+              _c(
+                "p",
+                {
+                  staticStyle: {
+                    "font-size": "18px",
+                    color: "grey",
+                    "font-weight": "300"
+                  }
+                },
+                [_vm._v("Share feedback, ask a question or give a high five")]
+              ),
+              _vm._v(" "),
+              _c(
+                "form",
+                {
+                  staticStyle: {
+                    width: "100%",
+                    display: "flex",
+                    "flex-wrap": "wrap",
+                    "justify-content": "flex-end"
+                  },
+                  attrs: { action: "comment", method: "post" }
+                },
+                [
+                  _c("input", {
+                    attrs: { type: "hidden", name: "_token" },
+                    domProps: { value: _vm.csrf }
+                  }),
+                  _vm._v(" "),
+                  _c("input", {
+                    attrs: { type: "hidden", name: "pin_id" },
+                    domProps: { value: _vm.pin[0].id }
+                  }),
+                  _vm._v(" "),
+                  _c("textarea", {
+                    staticClass: "form-control",
+                    attrs: {
+                      name: "comment_text",
+                      placeholder: "Add a comment",
+                      rows: "2"
+                    }
+                  }),
+                  _vm._v(" "),
+                  _c(
+                    "button",
+                    {
+                      staticClass: "btn btn-secondary",
+                      staticStyle: {
+                        "align-self": "end",
+                        "margin-top": "10px"
+                      },
+                      attrs: { type: "submit" }
+                    },
+                    [_vm._v("Comment")]
+                  )
+                ]
+              ),
+              _vm._v(" "),
+              _c(
+                "div",
+                { staticStyle: { width: "100%", "margin-top": "10px" } },
+                _vm._l(_vm.comments, function(comment) {
+                  return _c(
+                    "div",
+                    { key: comment.id, staticClass: "comment" },
+                    [
+                      _c("div", { staticStyle: { "font-weight": "bolder" } }, [
+                        _vm._v(
+                          "\n                                    " +
+                            _vm._s(comment.name) +
+                            "\n                                "
+                        )
+                      ]),
+                      _vm._v(" "),
+                      _c("div", [
+                        _vm._v(
+                          "\n                                    " +
+                            _vm._s(comment.comment) +
+                            "\n                                "
+                        )
+                      ])
+                    ]
+                  )
+                }),
+                0
+              ),
+              _vm._v(" "),
+              _c("h1", { staticClass: "dsc-input" }, [
+                _vm._v(_vm._s(_vm.pin[0].description))
+              ])
+            ]
+          )
+        ]
+      )
     ])
   ])
 }
-var staticRenderFns = [
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c(
-      "div",
-      { staticClass: "row justify-content-end", staticStyle: { margin: "0" } },
-      [
-        _c(
-          "button",
-          { staticClass: "btn btn-danger", attrs: { type: "submit" } },
-          [_vm._v("Exit")]
-        )
-      ]
-    )
-  }
-]
+var staticRenderFns = []
 render._withStripped = true
 
 
