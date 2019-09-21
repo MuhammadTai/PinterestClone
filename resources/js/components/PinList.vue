@@ -43,7 +43,7 @@
                     isFitWidth: true,
                     gutter: 20,
                 })
-                console.log("123")
+                
                 imagesLoaded('.grid').on( 'progress', function() {
                     // layout Masonry after each image loads
                     msnry.layout();

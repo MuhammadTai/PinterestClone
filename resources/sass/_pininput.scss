@@ -1,0 +1,80 @@
+@import 'pin';
+
+.main-div{
+    @extend %pin-body-shared;
+    height: 600px;
+}
+
+.content{
+    height: 450px; 
+    width: 100%; 
+    padding: 20px;
+}
+
+.img-input{
+    background: #efefef; 
+    width: 100%; 
+    height: 100%;
+    border-radius: 10px;
+}
+
+.title-input{
+    @extend %pin-title;
+    border-top-style: hidden;
+    border-left-style: hidden;
+    border-right-style: hidden;
+    
+}
+
+.dsc-input{
+    @extend %pin-dsc;
+    border-top-style: hidden;
+    border-left-style: hidden;
+    border-right-style: hidden;
+
+}
+
+.name{
+    margin-top: 20px;
+    font-size: 14px;
+}
+
+.img{
+    width: 80%;
+    height: 100%;
+}
+
+@media (max-width: 768px) { 
+.main-div{
+    height: fit-content;
+}
+.title-input{
+    font-size: 38px;
+}
+.dsc-input{
+    font-size: 16px;
+}
+
+.img{
+    width: 70%;
+}
+.content{
+    height: 400px; 
+}
+}
+
+@media (max-width: 575.98px) { 
+.title-input{
+    font-size: 24px;
+}
+.dsc-input{
+    font-size: 14px;
+}
+.main-div{
+    width: 80%;
+}
+.img{
+    width: 80%;
+    height: 100%;
+}
+}

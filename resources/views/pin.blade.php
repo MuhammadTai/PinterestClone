@@ -10,6 +10,6 @@
     </ul>
 
     <div class="container">
-            <pin  v-bind:pin="{{$pin}}" v-bind:comments="{{$comments}}"></pin>
+            <pin v-bind:owner="'{{$owner}}'" v-bind:pin="{{$pin}}" v-bind:comments="{{$comments}}"></pin>
     </div>
 @endsection

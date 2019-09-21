@@ -75,9 +75,15 @@ class HomeController extends Controller
             ->join('users', 'comments.user_id', '=', 'users.id')
             ->where('comments.pin_id', $id)
             ->select('users.id', 'users.name', 'comments.*')
+            ->orderBy('created_at','desc')
             ->get();
 
-        return view('pin', ['pin' => $pin, 'comments' => $comments]);
+        $owner = false;
+        if(Auth::id()== $pin[0]->user_id){
+            $owner = true;
+        }
+        return view('pin', ['pin' => $pin, 'comments' => $comments, 'owner' => $owner]);
+        
     }
 
     public function storeComment(Request $request){
@@ -100,8 +106,10 @@ class HomeController extends Controller
     }
 
     public function destroy(Request $request){
-        $deletedCommentRows = Comment::where('pin_id', $request->get('pin_id'))->delete();
-        $deletedPinRows = Pin::where([['user_id', Auth::id()],['id', $request->get('pin_id')]])->delete();
+        if ($request->get('owner_id') ==  Auth::id()){
+            $deletedCommentRows = Comment::where('pin_id', $request->get('pin_id'))->delete();
+            $deletedPinRows = Pin::where([['user_id', Auth::id()],['id', $request->get('pin_id')]])->delete();
+        }
         return redirect('/home');
     }
 }

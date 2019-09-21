@@ -10,8 +10,9 @@
                         <input type="hidden" name="_method" value="DELETE">
                         <input type="hidden" name="_token" :value="csrf">
                         <input type="hidden" name="pin_id" :value="pin[0].id">
-                        
-                        <button class="btn btn-danger" type="submit">Delete</button>
+                        <input type="hidden" name="owner_id" :value="pin[0].user_id">
+
+                        <button v-if="show" class="btn btn-danger" type="submit">Delete</button>
                      </form>
                     
                     <button class="btn btn-danger" v-on:click="exit">Exit</button>
@@ -23,8 +24,9 @@
                         </div>
                     </div>
                     <div class="content col-md-5 d-flex flex-column align-items-start"  style="padding: 20px">
-                            <h1 class="title-input">{{pin[0].title}}</h1>
+                            <h1 class="title">{{pin[0].title}}</h1>
                             <h2 style="margin-top: 20px;"><span style="color: grey">Uploaded by</span> {{pin[0].name}}</h2>
+                            <h1 class="dsc">{{pin[0].description}}</h1>
                             <h3 style="margin-top: 60px;">{{comments.size}} Comments</h3>
                             <p style="font-size: 18px; color: grey; font-weight: 300;">Share feedback, ask a question or give a high five</p>
                             <form
@@ -50,7 +52,6 @@
                                     </div>
                                
                             </div>
-                            <h1 class="dsc-input">{{pin[0].description}}</h1>
                             
                     </div>
                 </div>
@@ -69,110 +70,25 @@
                 csrf: document.querySelector('meta[name="csrf-token"]').getAttribute('content')
             }
         },
-        props: ['pin', 'comments'],
+        props: ['pin', 'comments', 'owner'],
         methods:{
             exit: function(){
                 window.location.href='/home'
+            },
+        },
+        computed:{
+            show: function(){
+                if(this.owner){
+                    return true;
+                }
+                return false;
             }
         }
     }
 </script>
 
-<style scoped>
-.comment{
-    height: fit-content;
-    width: 100%;
-    border-style: solid;
-    border-color: #efefef;
-    font-size: 14px;
-    border-radius: 10px;
-    padding: 12px;
-    margin-bottom: 20px;
-}
-.img-width{
-    width: 100%;
-}
+<style scoped lang="scss">
+@import '../../sass/_pinview.scss';
 
-.main-div{
-    background: white;
-    border-radius: 16px;
-    width: 100%;
-    margin-top: 30px;
-    height: fit-content;
-    padding: 20px;
-}
-
-.content{
-    height: fit-content; 
-    width: 80%; 
-    padding: 20px;
-}
-
-.img-input{
-    background: #efefef; 
-    width: 100%; 
-    height: 100%;
-    border-radius: 10px;
-}
-
-.title-input{
-    margin-top: 20px;
-    border-top-style: hidden;
-    border-left-style: hidden;
-    border-right-style: hidden;
-    font-size: 40px;
-}
-
-.dsc-input{
-    margin-top: 20px;
-    border-top-style: hidden;
-    border-left-style: hidden;
-    border-right-style: hidden;
-    font-size: 18px;
-
-}
-
-.name{
-    margin-top: 20px;
-    font-size: 14px;
-}
-
-.img{
-    max-width: 500px;
-    height: 100%;
-}
-@media (max-width: 1199.98px) {
-
-}
-@media (max-width: 768px) { 
-
-.title-input{
-    font-size: 38px;
-}
-.dsc-input{
-    font-size: 16px;
-}
-
-.img{
-    width: 80%;
-}
-
-}
-
-@media (max-width: 575.98px) { 
-.title-input{
-    font-size: 24px;
-}
-.dsc-input{
-    font-size: 14px;
-}
-.main-div{
-    width: 80%;
-}
-.img{
-    width: 100%;
-    height: 100%;
-}
-}
 
 </style>
